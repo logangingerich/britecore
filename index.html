@@ -33,22 +33,97 @@
     </div>
     <div class="container-fluid main-card">
         <div class="row">
-            <div class="col-xs-3 field-types">
+            <div class="col-xs-3 pre-scrollable field-types">
                 <h4>Field Types</h4>
+                <p>Filter Types</p>
+                <input type="text" class="form-control">
+                <div class="types">
+                    <h5>Text</h5>
+                    <h6>Definition</h6>
+                    <p>String of Text</p>
+                    <h6>Defaul Display</h6>
+                    <p>Free-form text input</p>
+                </div>
+                <div class="types">
+                    <h5>Text</h5>
+                    <h6>Definition</h6>
+                    <p>String of Text</p>
+                    <h6>Defaul Display</h6>
+                    <p>Free-form text input</p>
+                </div>
+                <div class="types">
+                    <h5>Text</h5>
+                    <h6>Definition</h6>
+                    <p>String of Text</p>
+                    <h6>Defaul Display</h6>
+                    <p>Free-form text input</p>
+                </div>
+                <div class="types">
+                    <h5>Text</h5>
+                    <h6>Definition</h6>
+                    <p>String of Text</p>
+                    <h6>Defaul Display</h6>
+                    <p>Free-form text input</p>
+                </div>
+                <div class="types">
+                    <h5>Text</h5>
+                    <h6>Definition</h6>
+                    <p>String of Text</p>
+                    <h6>Defaul Display</h6>
+                    <p>Free-form text input</p>
+                </div>
             </div>
-            <div class="col-xs-9">
+            <div class="col-xs-9 field-details">
                 <h4>Field Details</h4>
+                <div class="col-xs-4">
+                    <div class="input">
+                        <p>Display Label</p>
+                        <input type="text" class="form-control">
+                        <p class="subtext">For display purposes, spaces allowed.</p>
+                    </div>
+                    <div class="input">
+                        <p>Default Value</p>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="input">
+                        <p>Custom Validation</p>
+                        <input type="text" class="form-control">
+                        <p class="subtext">Any Regex pattern can be used for custom validation.</p>
+                    </div>
+                    <h4>Tags</h4>
+                    <p>Tag Groups</p>
+                    <div class="badge badge">Vinmaster</div>
+                    <div class="badge badge">ISO</div>
+                    <div class="badge badge">Tag 3</div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="input">
+                        <p>Reference Name</p>
+                        <input type="text" class="form-control">
+                        <p class="subtext">Used to reference in calculations, no spaces allowed.</p>
+                        <div class="selected-tags">
+                            <p>Tags</p>
+                            <p class="subtext">Used to reference in calculations, no spaces allowed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 field-groups">
+                    <h4>Field Groups</h4>
+                    <p class="subtext">Choose a group for this input.</p>
+                    <h5 class="ind-groups text-center">Rental Vehicle Coverage Package</h5>
+                    <button class="btn btn-default new-group">Add New Group</button>
+                </div>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-6">
-                <button class="btn-success save">Save Changes</button>
+                <button class="btn btn-success save">Save Changes</button>
             </div>
             <div class="col-xs-6 text-right cancel-delete">
-                <button class="btn-secondary cancel">Cancel Changes</button>
-                <button class="btn-danger delete">Delete Input</button>
+                <button class="btn btn-default cancel">Cancel Changes</button>
+                <button class="btn btn-danger delete">Delete Input</button>
             </div>            
         </div>
     </div>

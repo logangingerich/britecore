@@ -1,3 +1,10 @@
+body {
+    background-color: #f9fbfb;
+    min-width:730px;
+    width: auto !important;  
+    width: 730px;
+}
+
 /* HEADER */
 
 .header {
@@ -22,14 +29,68 @@
 
 .main-card {
     border: solid;
-    border-color: lightblue;
+    border-color: #d0dee0;
+    border-radius: 10px;
     margin: 0px 35px 10px 35px;
 }
 
 .field-types {
     border-right: solid;
-    border-color: lightblue;
+    border-color: #d0dee0;
     background-color: #eff4f5;
+    margin-bottom: 0px;
+}
+
+.pre-scrollable {
+    max-height: 460px;
+    overflow-y: scroll;
+}
+
+.field-details {
+    background-color: white;
+}
+
+.types {
+    border: solid;
+    border-color: #d0dee0;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.subtext {
+    font-size: 75%;
+    color: #017c91
+}
+
+.input {
+    margin-bottom: 25px;
+}
+
+.selected-tags {
+    margin-top: 100%;
+}
+
+.field-groups {
+    border: solid;
+    border-color: #d0dee0;
+    border-radius: 10px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9fbfb;
+}
+
+.ind-groups {
+    border: solid;
+    border-color: #d0dee0;
+    border-radius: 10px;
+    padding: 10px 5px 10px 5px;
+}
+
+.new-group {
+    margin-top: 100%;
+    margin-bottom: 10px;
 }
 
 /* FOOTER */
