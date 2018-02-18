@@ -1,0 +1,43 @@
+/* HEADER */
+
+.header {
+    background: #144852;
+    color: white;
+}
+
+.header-buttons {
+    float: left;
+    margin-right: 25px;
+    font-weight: 150;
+}
+
+/* TITLE */
+
+#title {
+    margin-left: 35px;
+    font-weight: 150;
+}
+
+/* MAIN CARD - GENERAL */
+
+.main-card {
+    border: solid;
+    border-color: lightblue;
+    margin: 0px 35px 10px 35px;
+}
+
+.field-types {
+    border-right: solid;
+    border-color: lightblue;
+    background-color: #eff4f5;
+}
+
+/* FOOTER */
+
+.save {
+    margin-left: 20px;
+}
+
+.cancel-delete {
+    padding-right: 35px;
+}
