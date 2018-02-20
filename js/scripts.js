@@ -2,8 +2,14 @@ var app = new Vue({
     el: '#app',
     data: {
         label: "",
+        executed: false,
         search: "",
+        selectedType: undefined,
+        selectedGroup: undefined,
         newGroup: "",
+        newBadge: "",
+        defaultValue: "",
+        customVal: "",
         types: [
             {name: "Text", definition: "String of Text", default: "Free-form text input"},
             {name: "Date", definition: "Standard ISO format date", default: "Datepicker, with configurable format"},
@@ -13,6 +19,11 @@ var app = new Vue({
         ],
         groups: [
             {name: "Rental Vehicale Coverage Package"}
+        ],
+        tagGroups: [
+            {name: "Vinmaster"},
+        ],
+        individualTags: [
         ]
     },
     computed: {
@@ -26,11 +37,37 @@ var app = new Vue({
             return type.name.toLowerCase().includes(this.search.toLowerCase())
           })
         },
+    },
+    methods: {
         addNewGroup: function () {
             this.groups.push({
                 name: this.newGroup
             })
-            this.newGroup = ''
+            this.newGroup = ""
+        },
+        addNewTag: function () {
+            if (!this.executed) {
+                this.individualTags.push({
+                    name: "Make",
+                })
+                this.individualTags.push({
+                    name: "Model",
+                })
+                this.individualTags.push({
+                    name: "Year",
+                })
+            }
+            this.executed = true;
+        },
+        clearAll: function () {
+            this.label = "";
+            this.search = "";
+            this.defaultValue = "";
+            this.customVal = "";
+            this.newGroup = "";
+            this.individualTags = [];
+            this.selectedType = undefined;
+            this.selectedGroup = undefined;
         }
     }
 });
