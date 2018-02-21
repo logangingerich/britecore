@@ -15,7 +15,8 @@ var app = new Vue({
             {name: "Date", definition: "Standard ISO format date", default: "Datepicker, with configurable format"},
             {name: "VIN", definition: "Vehicle Identification Number", default: "Free-form text input"},
             {name: "Number", definition: "Numerical quantity", default: "Free-form numerical input"},
-            {name: "Currency", definition: "Form of money", default: "Free-form numerial input"}
+            {name: "Currency", definition: "Form of money", default: "Free-form numerial input"},
+            {name: "Select (multiple preset options with a single choice)", definition: "Multiple options", default: "Free-form text input"}
         ],
         groups: [
             {name: "Rental Vehicale Coverage Package"}
@@ -36,7 +37,7 @@ var app = new Vue({
           return this.types.filter(type => {
             return type.name.toLowerCase().includes(this.search.toLowerCase())
           })
-        },
+        }
     },
     methods: {
         addNewGroup: function () {
