@@ -111,6 +111,10 @@ body {
     margin-left: 20px;
 }
 
+#footer {
+    margin-bottom: 20px;
+}
+
 .cancel-delete {
     padding-right: 35px;
 }
