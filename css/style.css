@@ -7,7 +7,7 @@ body {
 
 /* HEADER */
 
-.header {
+#header {
     background: #144852;
     color: white;
 }
@@ -27,18 +27,18 @@ body {
 
 /* MAIN CARD - GENERAL */
 
-.main-card {
+#main-card {
     border: solid;
     border-color: #d0dee0;
     border-radius: 10px;
     margin: 0px 35px 10px 35px;
 }
 
-.field-types {
+#field-types {
     border-right: solid;
     border-color: #d0dee0;
     background-color: #eff4f5;
-    margin-bottom: 0px;
+    min-height: 460px;
 }
 
 .pre-scrollable {
@@ -50,7 +50,7 @@ body {
     background-color: white;
 }
 
-.types {
+.ind-types {
     border: solid;
     border-color: #d0dee0;
     padding-left: 10px;
@@ -58,9 +58,17 @@ body {
     margin-top: 10px;
 }
 
+.selectables {
+    cursor: pointer;
+}
+
 .subtext {
     font-size: 75%;
-    color: #017c91
+    color: #017c91;
+}
+
+#warning {
+    color: red;
 }
 
 .input {
@@ -71,14 +79,13 @@ body {
     margin-top: 100%;
 }
 
-.field-groups {
+#field-groups {
     border: solid;
     border-color: #d0dee0;
     border-radius: 10px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
+    min-height: 350px;
     background-color: #f9fbfb;
+    max-height: 400px;
 }
 
 .ind-groups {
@@ -86,16 +93,21 @@ body {
     border-color: #d0dee0;
     border-radius: 10px;
     padding: 10px 5px 10px 5px;
+    margin-bottom: 10px;
 }
 
-.new-group {
-    margin-top: 100%;
-    margin-bottom: 10px;
+.ind-tag {
+    float: left;
+}
+
+.highlight {
+    background-color: #017c91;
+    color: white;
 }
 
 /* FOOTER */
 
-.save {
+#save {
     margin-left: 20px;
 }
 

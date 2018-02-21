@@ -3,130 +3,119 @@
 <head>
     <meta charset="utf-8">
     <title>BriteCore UI Engineer Project</title>
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-    <div class="container-fluid">
-        <div class="row header">
-            <div class="col-xs-12 col-sm-2 text-left">
-                <h4 class="header-buttons">BriteCore</h4>
+    <div id="app">
+        <div class="container-fluid">
+            <div class="row" id="header">
+                <div class="col-xs-12 col-sm-2 text-left">
+                    <h4 class="header-buttons">BriteCore</h4>
+                </div>
+                <div class="col-xs-10 text-left">
+                    <h4 class="header-buttons">Policies</h4>
+                    <h4 class="header-buttons">Claims</h4>
+                    <h4 class="header-buttons">Contacts</h4>
+                    <h4 class="header-buttons">Data</h4>
+                    <h4 class="header-buttons">Lines</h4>
+                    <h4 class="header-buttons">All Modules</h4>
+                </div>
             </div>
-            <div class="col-xs-10 text-left">
-                <h4 class="header-buttons">Policies</h4>
-                <h4 class="header-buttons">Claims</h4>
-                <h4 class="header-buttons">Contacts</h4>
-                <h4 class="header-buttons">Data</h4>
-                <h4 class="header-buttons">Lines</h4>
-                <h4 class="header-buttons">All Modules</h4>
+            <div class="row">
+                <div clas="col-xs-12">
+                    <h1 id="title">Commercial Property - Add Field</h1>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div clas="col-xs-12">
-                <h1 id="title">Commercial Property - Add Field</h1>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid main-card">
-        <div class="row">
-            <div class="col-xs-3 pre-scrollable field-types">
-                <h4>Field Types</h4>
-                <p>Filter Types</p>
-                <input type="text" class="form-control">
-                <div class="types">
-                    <h5>Text</h5>
-                    <h6>Definition</h6>
-                    <p>String of Text</p>
-                    <h6>Defaul Display</h6>
-                    <p>Free-form text input</p>
-                </div>
-                <div class="types">
-                    <h5>Text</h5>
-                    <h6>Definition</h6>
-                    <p>String of Text</p>
-                    <h6>Defaul Display</h6>
-                    <p>Free-form text input</p>
-                </div>
-                <div class="types">
-                    <h5>Text</h5>
-                    <h6>Definition</h6>
-                    <p>String of Text</p>
-                    <h6>Defaul Display</h6>
-                    <p>Free-form text input</p>
-                </div>
-                <div class="types">
-                    <h5>Text</h5>
-                    <h6>Definition</h6>
-                    <p>String of Text</p>
-                    <h6>Defaul Display</h6>
-                    <p>Free-form text input</p>
-                </div>
-                <div class="types">
-                    <h5>Text</h5>
-                    <h6>Definition</h6>
-                    <p>String of Text</p>
-                    <h6>Defaul Display</h6>
-                    <p>Free-form text input</p>
-                </div>
-            </div>
-            <div class="col-xs-9 field-details">
-                <h4>Field Details</h4>
-                <div class="col-xs-4">
-                    <div class="input">
-                        <p>Display Label</p>
-                        <input type="text" class="form-control">
-                        <p class="subtext">For display purposes, spaces allowed.</p>
+        <div class="container-fluid" id="main-card">
+            <div class="row">
+                <div class="col-xs-3 pre-scrollable" id="field-types">
+                    <h4>Field Types</h4>
+                    <p>Filter Types</p>
+                    <input type="text" class="form-control" v-model="search">
+                    <div class="ind-types selectables" v-for="type in filteredList" :class="{highlight:type.name == selectedType}" v-on:click="selectedType = type.name">
+                        <h5>{{ type.name }}</h5>
+                        <h6 class="font-weight-bold">Definition</h6>
+                        <p>{{ type.definition }}</p>
+                        <h6>Defaul Display</h6>
+                        <p>{{ type.default }}</p>
                     </div>
-                    <div class="input">
-                        <p>Default Value</p>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="input">
-                        <p>Custom Validation</p>
-                        <input type="text" class="form-control">
-                        <p class="subtext">Any Regex pattern can be used for custom validation.</p>
-                    </div>
-                    <h4>Tags</h4>
-                    <p>Tag Groups</p>
-                    <div class="badge badge">Vinmaster</div>
-                    <div class="badge badge">ISO</div>
-                    <div class="badge badge">Tag 3</div>
                 </div>
-                <div class="col-xs-4">
-                    <div class="input">
-                        <p>Reference Name</p>
-                        <input type="text" class="form-control">
-                        <p class="subtext">Used to reference in calculations, no spaces allowed.</p>
-                        <div class="selected-tags">
-                            <p>Tags</p>
-                            <p class="subtext">Used to reference in calculations, no spaces allowed.</p>
+                <div class="col-xs-9 field-details">
+                    <h4>Field Details</h4>
+                    <div class="col-xs-4">
+                        <div class="input">
+                            <p>Display Label</p>
+                            <input type="text" class="form-control" v-model="label" id="label" name="label" />
+                            <p class="subtext">For display purposes, spaces allowed.</p>
+                        </div>
+                        <div class="input">
+                            <p>Default Value</p>
+                            <input type="text" class="form-control" v-model="defaultValue">
+                        </div>
+                        <div class="input">
+                            <p>Custom Validation</p>
+                            <input type="text" v-model="customVal" v-validate="'required|min:5'" class="{'input': true, 'is-danger': errors.has('custom validation') }" id="custom" name="custom validation" type="text">
+                            <p v-show="errors.has('custom validation')" class="subtext" id="warning">{{ errors.first('custom validation') }}</p>
+                            <p class="subtext">Any Regex pattern can be used for custom validation.</p>
+                        </div>
+                        <h4>Tags</h4>
+                        <p>Tag Groups</p>
+                        <div class="badges" v-for="tag in tagGroups">
+                            <div class="badge selectables" v-on:click="addNewTag()">{{ tag.name }}</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xs-4 field-groups">
-                    <h4>Field Groups</h4>
-                    <p class="subtext">Choose a group for this input.</p>
-                    <h5 class="ind-groups text-center">Rental Vehicle Coverage Package</h5>
-                    <button class="btn btn-default new-group">Add New Group</button>
+                    <div class="col-xs-4">
+                        <div class="input">
+                            <p>Reference Name</p>
+                            <p>{{ noSpaces }}</p>
+                            <p class="subtext">Used to reference in calculations, no spaces allowed.</p>
+                            <div class="selected-tags">
+                                <p>Tags</p>
+                                <p class="subtext">Select a tag group to see individual tags.</p>
+                            </div>
+                            <div class="tags" v-for="tag in individualTags">
+                                <div class="badge badge ind-tag" v-on:click="addNewTag()">
+                                    {{ tag.name }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 pre-scrollable text-center" id="field-groups">
+                        <h4>Field Groups</h4>
+                        <p class="subtext">Choose a group for this input.</p>
+                        <div v-for="group in groups" :class="{highlight:group.name == selectedGroup}" class="ind-groups selectables" v-on:click="selectedGroup = group.name">
+                            <h5>{{ group.name }}</h5>
+                        </div>
+                        <input type="text" class="form-control" v-model="newGroup" placeholder="Enter group name">
+                        <br>
+                        <button v-on:click="addNewGroup()" class="btn btn-primary">Add New Group</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-6">
-                <button class="btn btn-success save">Save Changes</button>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6">
+                    <button v-on:click="clearAll()" class="btn btn-success" id="save">Save Changes</button>
+                </div>
+                <div class="col-xs-6 text-right cancel-delete">
+                    <button v-on:click="clearAll()" class="btn btn-default cancel">Cancel Changes</button>
+                    <button v-on:click="clearAll()" class="btn btn-danger delete">Delete Input</button>
+                </div>            
             </div>
-            <div class="col-xs-6 text-right cancel-delete">
-                <button class="btn btn-default cancel">Cancel Changes</button>
-                <button class="btn btn-danger delete">Delete Input</button>
-            </div>            
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate.js"></script>
+        <script src="https://unpkg.com/vee-validate@2.0.0-rc.7"></script>
+        <script>Vue.use(VeeValidate);</script>
+        <script src="./js/scripts.js"></script>
     </div>
-<script src="js/scripts.js"></script>
 </body>
 </html>
