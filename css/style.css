@@ -38,7 +38,7 @@ body {
     border-right: solid;
     border-color: #d0dee0;
     background-color: #eff4f5;
-    min-height: 460px;
+    min-height: 100%;
 }
 
 .pre-scrollable {
